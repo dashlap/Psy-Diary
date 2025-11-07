@@ -1,0 +1,759 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f6fa;
+            color: #333;
+            max-width: 414px;
+            margin: 0 auto;
+            padding: 20px;
+            height: auto;
+            overflow-y: auto;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .settings-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Calendar */
+        .calendar {
+            display: flex;
+            /* justify-content: space-around; */
+            margin-bottom: 18px;
+            gap: 18px;
+        }
+
+        .calendar-day {
+            width: 56px;
+            height: 62px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .today {
+            background-color: #7b68ee;
+            color: white;
+
+        }
+
+
+
+        .calendar-day .day-name {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .calendar-day .day-number {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        /* Mood Section */
+        .mood-section {
+            background-color: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .mood-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .mood-options {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+        }
+
+        .mood-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .mood-option:hover {
+            transform: scale(1.1);
+        }
+
+        .mood-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .mood-icon::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .mood-option.selected .mood-icon::after {
+            border-color: #7b68ee;
+        }
+
+        .mood-icon img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .mood-label {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Task Section */
+        .task-section {
+            background-color: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .task-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .task-icon {
+            width: 50px;
+            height: 30px;
+            background-color: #e6e6fa;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .task-text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .task-progress {
+            background-color: #f0f0f8;
+            border-radius: 12px;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Journal Sections */
+        .journal-sections {
+            display: grid;
+            gap: 15px;
+        }
+
+        .journal-card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .journal-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .journal-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .journal-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .journal-button {
+            background-color: #7b68ee;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            align-self: flex-start;
+        }
+
+        .journal-button:hover {
+            background-color: #6a5acd;
+        }
+
+        .journal-card .icon {
+            width: 60px;
+            height: 60px;
+            margin-left: auto;
+            opacity: 0.3;
+        }
+
+        /* Question of the Day */
+        .question-card {
+            background: linear-gradient(135deg, #e6e6fa, #c8d8ff);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: relative;
+            align-items: center;
+
+        }
+
+        .refresh-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background-color: #e6e6fa;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .refresh-icon:hover {
+            transform: rotate(180deg);
+        }
+
+        .question-title {
+            display: flex;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .question-button {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            color: #7b68ee;
+            border: 2px solid #7b68ee;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            
+        }
+
+        .question-button:hover {
+            background-color: #f0f0f8;
+        }
+
+        /* Mood Detail Page */
+        .mood-detail-page {
+            display: none;
+            height: 100%;
+            flex-direction: column;
+            background-color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .back-button {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .selected-mood {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .selected-mood-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .selected-mood-label {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .add-button {
+            background-color: #f0f0f8;
+            border: none;
+            border-radius: 12px;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.2s ease;
+        }
+
+        .add-button:hover {
+            background-color: #e0e0f0;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+
+        .slider-label {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .slider {
+            width: 70%;
+            height: 6px;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .slider-track {
+            position: absolute;
+            height: 100%;
+            background-color: #7b68ee;
+            border-radius: 3px;
+            left: 0;
+            right: 0;
+        }
+
+        .slider-thumb {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 2px solid #7b68ee;
+            border-radius: 50%;
+            top: -7px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .slider-value {
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .slider-value.negative {
+            background-color: #ffcdd2;
+            color: #d32f2f;
+        }
+
+        .slider-value.positive {
+            background-color: #c8e6c9;
+            color: #388e3c;
+        }
+
+        .note-input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            font-size: 16px;
+            resize: none;
+            min-height: 100px;
+            margin-top: 10px;
+        }
+
+        .save-button {
+            background-color: #7b68ee;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: auto;
+            align-self: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .save-button:hover {
+            background-color: #6a5acd;
+        }
+
+        /* Journal Pages */
+        .journal-page {
+            display: none;
+            height: 100%;
+            flex-direction: column;
+            background-color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .journal-question {
+            margin: 20px 0;
+        }
+
+        .journal-question-number {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: #7b68ee;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .journal-question-text {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .journal-answer {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            font-size: 16px;
+            resize: none;
+            min-height: 60px;
+        }
+
+        .save-button {
+            background-color: #7b68ee;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            align-self: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .save-button:hover {
+            background-color: #6a5acd;
+        }
+
+        /* Question Page */
+        .question-page {
+            display: none;
+            height: 100%;
+            flex-direction: column;
+            background-color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .question-input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #7b68ee;
+            font-size: 16px;
+            resize: none;
+            min-height: 150px;
+            margin: 20px 0;
+        }
+
+        .answer-button {
+            background-color: #7b68ee;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: auto;
+            align-self: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .answer-button:hover {
+            background-color: #6a5acd;
+        }
+
+        /* Positive Moment Page */
+        .positive-moment-page {
+            display: none;
+            height: 100%;
+            flex-direction: column;
+            background-color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .positive-moment-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .positive-moment-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .positive-moment-input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #7b68ee;
+            font-size: 16px;
+            resize: none;
+            min-height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .positive-moment-button {
+            background-color: #7b68ee;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: auto;
+            align-self: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .positive-moment-button:hover {
+            background-color: #6a5acd;
+        }
+
+        /* Negative Situation Page */
+        .negative-situation-page {
+            display: none;
+            height: 100%;
+            flex-direction: column;
+            background-color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .negative-situation-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .negative-situation-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .negative-situation-input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #7b68ee;
+            font-size: 16px;
+            resize: none;
+            min-height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .negative-situation-button {
+            background-color: #7b68ee;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: auto;
+            align-self: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .negative-situation-button:hover {
+            background-color: #6a5acd;
+        }
+
+        /* Hidden class for pages */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Mobile specific styles */
+        @media (max-width: 414px) {
+            body {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 22px;
+            }
+            
+            .calendar-day {
+                width: 45px;
+                height: 62px;
+            }
+            
+            .mood-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .journal-title {
+                font-size: 16px;
+            }
+            
+            .journal-button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+            
+            .question-button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+            
+            .page-title {
+                font-size: 22px;
+            }
+            
+            .selected-mood-icon {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .form-title {
+                font-size: 16px;
+            }
+            
+            .slider-container {
+                margin: 10px 0;
+            }
+            
+            .note-input {
+                padding: 12px;
+                font-size: 14px;
+            }
+            
+            .save-button {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+        }

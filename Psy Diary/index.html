@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник настроения</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./normalize.css">
+    </head>
+<body>
+    <!-- Main Page -->
+    <div class="app-container" id="mainPage">
+        <div class="header">
+            <h1>Сегодня</h1>
+            <div class="settings-icon">⚙️</div>
+        </div>
+
+        <div class="calendar">
+            <div class="calendar-day">
+                <span class="day-name">Пт</span>
+                <span class="day-number">31</span>
+            </div>
+            <div class="calendar-day">
+                <span class="day-name">Сб</span>
+                <span class="day-number">1</span>
+            </div>
+            <div class="calendar-day">
+                <span class="day-name">Вс</span>
+                <span class="day-number">2</span>
+            </div>
+            <div class="calendar-day">
+                <span class="day-name">Пн</span>
+                <span class="day-number">3</span>
+            </div>
+            <div class="calendar-day">
+                <span class="day-name">Вт</span>
+                <span class="day-number">4</span>
+            </div>
+            <div class="calendar-day ">
+                <span class="day-name">Ср</span>
+                <span class="day-number">5</span>
+            </div>
+        </div>
+
+        <div class="mood-section">
+            <h2>Как ваше настроение?</h2>
+            <div class="mood-options">
+                <div class="mood-option" data-mood="ужасно">
+                    <div class="mood-icon" style="background-color: #ffcdd2;">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDMwIDMwIj48Y2lyY2xlIGN4PSIxNSIgY3k9IjE1IiByPSIxMCIgZmlsbD0iI2ZmY2RkMiIvPjxjaXJjbGUgY3g9IjExIiBjeT0iMTIiIHI9IjEiIGZpbGw9IiMzMzMiLz48Y2lyY2xlIGN4PSIxOSIgY3k9IjEyIiByPSIxIiBmaWxsPSIjMzMzIi8+PGxpbmUgeDE9IjkiIHkxPSIxOCIgeDI9IjIxIiB5Mj0iMTgiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=" alt="Ужасно">
+                    </div>
+                    <div class="mood-label">Ужасно</div>
+                </div>
+                <div class="mood-option" data-mood="плохо">
+                    <div class="mood-icon" style="background-color: #ffccbc;">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDMwIDMwIj48Y2lyY2xlIGN4PSIxNSIgY3k9IjE1IiByPSIxMCIgZmlsbD0iI2ZmY2NiYyIvPjxjaXJjbGUgY3g9IjExIiBjeT0iMTIiIHI9IjEiIGZpbGw9IiMzMzMiLz48Y2lyY2xlIGN4PSIxOSIgY3k9IjEyIiByPSIxIiBmaWxsPSIjMzMzIi8+PGxpbmUgeDE9IjkiIHkxPSIxOCIgeDI9IjIxIiB5Mj0iMTgiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=" alt="Плохо">
+                    </div>
+                    <div class="mood-label">Плохо</div>
+                </div>
+                <div class="mood-option" data-mood="норм">
+                    <div class="mood-icon" style="background-color: #fff176;">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDMwIDMwIj48Y2lyY2xlIGN4PSIxNSIgY3k9IjE1IiByPSIxMCIgZmlsbD0iI2ZmZjE3NiIvPjxjaXJjbGUgY3g9IjExIiBjeT0iMTIiIHI9IjEiIGZpbGw9IiMzMzMiLz48Y2lyY2xlIGN4PSIxOSIgY3k9IjEyIiByPSIxIiBmaWxsPSIjMzMzIi8+PGxpbmUgeDE9IjkiIHkxPSIxOCIgeDI9IjIxIiB5Mj0iMTgiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=" alt="Норм">
+                    </div>
+                    <div class="mood-label">Норм</div>
+                </div>
+                <div class="mood-option" data-mood="хорошо">
+                    <div class="mood-icon" style="background-color: #81c784;">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDMwIDMwIj48Y2lyY2xlIGN4PSIxNSIgY3k9IjE1IiByPSIxMCIgZmlsbD0iIzgxYzc4NCIvPjxjaXJjbGUgY3g9IjExIiBjeT0iMTIiIHI9IjEiIGZpbGw9IiMzMzMiLz48Y2lyY2xlIGN4PSIxOSIgY3k9IjEyIiByPSIxIiBmaWxsPSIjMzMzIi8+PGxpbmUgeDE9IjEwIiB5MT0iMTgiIHgyPSIxOSIgeTI9IjE4IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+" alt="Хорошо">
+                    </div>
+                    <div class="mood-label">Хорошо</div>
+                </div>
+                <div class="mood-option" data-mood="супер">
+                    <div class="mood-icon" style="background-color: #4dd0e1;">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDMwIDMwIj48Y2lyY2xlIGN4PSIxNSIgY3k9IjE1IiByPSIxMCIgZmlsbD0iIzRkZDBlMSIvPjxjaXJjbGUgY3g9IjExIiBjeT0iMTIiIHI9IjEiIGZpbGw9IiMzMzMiLz48Y2lyY2xlIGN4PSIxOSIgY3k9IjEyIiByPSIxIiBmaWxsPSIjMzMzIi8+PGxpbmUgeDE9IjEwIiB5MT0iMTgiIHgyPSIxOSIgeTI9IjE4IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+" alt="Супер">
+                    </div>
+                    <div class="mood-label">Супер</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <div class="task-content">
+                <div class="task-icon">🙂</div>
+                <div class="task-text">Сделайте 3 любые записи и я сгенерирую для вас аффирмацию!</div>
+            </div>
+            <div class="task-progress">0/3</div>
+        </div>
+
+        <div class="journal-sections">
+            <div class="journal-card" id="morningJournal">
+                <div class="journal-title">Утренний дневник</div>
+                <div class="journal-subtitle">Начните день осознанно</div>
+                <button class="journal-button">Написать</button>
+                <div class="icon">☀️</div>
+            </div>
+
+            <div class="journal-card" id="eveningJournal">
+                <div class="journal-title">Вечерний дневник</div>
+                <div class="journal-subtitle">Подведите итоги дня</div>
+                <button class="journal-button">Написать</button>
+                <div class="icon">🌙</div>
+            </div>
+
+            <div class="question-card">
+                <div class="refresh-icon">🔄</div>
+                <div class="question-title">Вопрос дня</div>
+                <div class="question-text" id="dailyQuestion">Что для меня значит любовь? Как я могу дарить и принимать больше любви?</div>
+                <button class="question-button">Написать ответ</button>
+            </div>
+
+            <div class="journal-card" id="positiveMoments">
+                <div class="journal-title">Дневник позитивных моментов</div>
+                <div class="journal-subtitle">Развивайте позитивное мышление</div>
+                <button class="journal-button">Добавить запись</button>
+                <div class="icon">⭐</div>
+            </div>
+
+            <div class="journal-card" id="negativeSituations">
+                <div class="journal-title">Дневник негативных ситуаций</div>
+                <div class="journal-subtitle">Проработайте негатив</div>
+                <button class="journal-button">Добавить запись</button>
+                <div class="icon">🌧️</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mood Detail Page -->
+    <div class="app-container hidden" id="moodDetailPage">
+        <div class="header">
+            <a href="#" class="back-button" id="backToMain">← Назад</a>
+            <div class="page-header">
+                <h1 class="page-title">Как ваше настроение?</h1>
+                
+            </div>
+        </div>
+
+        <div class="selected-mood">
+            <div class="selected-mood-icon" id="selectedMoodIcon" style="background-color: #fff176;">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDMwIDMwIj48Y2lyY2xlIGN4PSIxNSIgY3k9IjE1IiByPSIxMCIgZmlsbD0iI2ZmZjE3NiIvPjxjaXJjbGUgY3g9IjExIiBjeT0iMTIiIHI9IjEiIGZpbGw9IiMzMzMiLz48Y2lyY2xlIGN4PSIxOSIgY3k9IjEyIiByPSIxIiBmaWxsPSIjMzMzIi8+PGxpbmUgeDE9IjkiIHkxPSIxOCIgeDI9IjIxIiB5Mj0iMTgiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=" alt="Норм">
+            </div>
+            <div class="selected-mood-label" id="selectedMoodLabel">Норм</div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-title">Эмоции</div>
+            <button class="add-button">Добавить +</button>
+        </div>
+
+        <div class="form-section">
+            <div class="form-title">Активности</div>
+            <button class="add-button">Добавить +</button>
+        </div>
+
+        <div class="form-section">
+            <div class="form-title">Энергия</div>
+            <div class="slider-container">
+                <div class="slider-label">Энергия</div>
+                <div class="slider">
+                    <div class="slider-track"></div>
+                    <div class="slider-thumb" style="left: 50%;"></div>
+                </div>
+                <div class="slider-value negative">-</div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-title">Стресс</div>
+            <div class="slider-container">
+                <div class="slider-label">Стресс</div>
+                <div class="slider">
+                    <div class="slider-track"></div>
+                    <div class="slider-thumb" style="left: 30%;"></div>
+                </div>
+                <div class="slider-value positive">-</div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-title">Заметка</div>
+            <textarea class="note-input" placeholder="Напишите заметку"></textarea>
+        </div>
+
+        <button class="save-button">Сохранить</button>
+    </div>
+
+    <!-- Morning Journal Page -->
+    <div class="app-container hidden" id="morningJournalPage">
+        <div class="header">
+            <a href="#" class="back-button" id="backToMainFromMorning">← Назад</a>
+            <div class="page-header">
+                <h1 class="page-title">Утренний дневник</h1>
+                
+            </div>
+        </div>
+
+        <div class="journal-content">
+            <p style="margin-bottom: 20px; font-size: 14px;">Будьте откровенны и подробны в своих ответах — это поможет вам начать день с осознанности и лучше понять себя.</p>
+
+            <div class="journal-question">
+                <span class="journal-question-number">1</span>
+                <div class="journal-question-text">Что я чувствую этим утром?</div>
+                <textarea class="journal-answer" placeholder="Я чувствую ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">2</span>
+                <div class="journal-question-text">Чем мне хотелось бы заняться сегодня?</div>
+                <textarea class="journal-answer" placeholder="Мне бы хотелось ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">3</span>
+                <div class="journal-question-text">Как я могу улучшить сегодняшний день?</div>
+                <textarea class="journal-answer" placeholder="Я могу улучшить этот день ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">4</span>
+                <div class="journal-question-text">Какой совет я могу дать себе на этот день?</div>
+                <textarea class="journal-answer" placeholder="Я советую себе сегодня ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">5</span>
+                <div class="journal-question-text">С какими трудностями я могу столкнуться и как я их преодолею?</div>
+                <textarea class="journal-answer" placeholder="Сегодня я могу столкнуться с ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">6</span>
+                <div class="journal-question-text">Какие дела стоит сделать в первую очередь?</div>
+                <textarea class="journal-answer" placeholder="В первую очередь мне стоит ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">7</span>
+                <div class="journal-question-text">Как я ощущаю себя физически?</div>
+                <textarea class="journal-answer" placeholder="Я чувствую себя ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">8</span>
+                <div class="journal-question-text">О чем я еще хочу написать?</div>
+                <textarea class="journal-answer" placeholder="Я хочу поделиться ..."></textarea>
+            </div>
+        </div>
+
+        <button class="save-button">Сохранить</button>
+    </div>
+
+    <!-- Evening Journal Page -->
+    <div class="app-container hidden" id="eveningJournalPage">
+        <div class="header">
+            <a href="#" class="back-button" id="backToMainFromEvening">← Назад</a>
+            <div class="page-header">
+                <h1 class="page-title">Вечерний дневник</h1>
+                
+            </div>
+        </div>
+
+        <div class="journal-content">
+            <p style="margin-bottom: 20px; font-size: 14px;">Отвечайте искренне и обдуманно, размышляя о событиях дня, чтобы лучше понять свои эмоции, мысли и переживания.</p>
+
+            <div class="journal-question">
+                <span class="journal-question-number">1</span>
+                <div class="journal-question-text">Что я чувствую сейчас?</div>
+                <textarea class="journal-answer" placeholder="Я чувствую ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">2</span>
+                <div class="journal-question-text">Чему этот день меня научил?</div>
+                <textarea class="journal-answer" placeholder="Этот день научил меня ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">3</span>
+                <div class="journal-question-text">Как можно было сделать этот день лучше?</div>
+                <textarea class="journal-answer" placeholder="День стал бы лучше, если ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">4</span>
+                <div class="journal-question-text">Какие трудности удалось преодолеть сегодня?</div>
+                <textarea class="journal-answer" placeholder="Сегодня удалось преодолеть ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">5</span>
+                <div class="journal-question-text">Каких целей удалось достичь сегодня?</div>
+                <textarea class="journal-answer" placeholder="Сегодня удалось достичь ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">6</span>
+                <div class="journal-question-text">Что больше всего запомнилось сегодня?</div>
+                <textarea class="journal-answer" placeholder="Сегодня запомнилось ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">7</span>
+                <div class="journal-question-text">Как я ощущаю себя физически?</div>
+                <textarea class="journal-answer" placeholder="Я чувствую себя ..."></textarea>
+            </div>
+
+            <div class="journal-question">
+                <span class="journal-question-number">8</span>
+                <div class="journal-question-text">О чем я еще хочу написать?</div>
+                <textarea class="journal-answer" placeholder="Я хочу поделиться ..."></textarea>
+            </div>
+        </div>
+
+        <button class="save-button">Сохранить</button>
+    </div>
+
+    <!-- Question Page -->
+    <div class="app-container hidden" id="questionPage">
+        <div class="header">
+            <a href="#" class="back-button" id="backToMainFromQuestion">← Назад</a>
+            <div class="page-header">
+                <h1 class="page-title">Вопрос дня</h1>
+                
+            </div>
+        </div>
+
+        <div class="question-content">
+            <p style="font-size: 18px; margin-bottom: 20px; font-weight: 600;" id="questionText">Что для меня значит любовь? Как я могу дарить и принимать больше любви?</p>
+            <textarea class="question-input" placeholder="Введите ваш ответ"></textarea>
+        </div>
+
+        <button class="answer-button">Написать</button>
+    </div>
+
+    <!-- Positive Moment Page -->
+    <div class="app-container hidden" id="positiveMomentPage">
+        <div class="header">
+            <a href="#" class="back-button" id="backToMainFromPositive">← Назад</a>
+            <div class="page-header">
+                <h1 class="page-title">Позитивный момент</h1>
+                
+            </div>
+        </div>
+
+        <div class="positive-moment-content">
+            <p class="positive-moment-description">Запишите позитивный момент, который вызвал у вас позитивные эмоции и чувства.</p>
+            <textarea class="positive-moment-input" placeholder="Сегодня произошел замечательный момент..."></textarea>
+        </div>
+
+        <button class="positive-moment-button">Написать</button>
+    </div>
+
+    <!-- Negative Situation Page -->
+    <div class="app-container hidden" id="negativeSituationPage">
+        <div class="header">
+            <a href="#" class="back-button" id="backToMainFromNegative">← Назад</a>
+            <div class="page-header">
+                <h1 class="page-title">Негативная ситуация</h1>
+                <div class="info-icon">?</div>
+            </div>
+        </div>
+
+        <div class="negative-situation-content">
+            <p class="negative-situation-description">Запишите негативную ситуацию, которая вызвала у вас негативные эмоции и чувства.</p>
+            <textarea class="negative-situation-input" placeholder="Сегодня произошло..."></textarea>
+        </div>
+
+        <button class="negative-situation-button">Написать</button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
